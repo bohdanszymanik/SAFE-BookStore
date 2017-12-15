@@ -1,5 +1,4 @@
 FSharp.Core
-Suave
 Microsoft.Extensions.Logging.Console
 System.Net.NetworkInformation
 Newtonsoft.Json
@@ -9,3 +8,11 @@ WindowsAzure.Storage
 Microsoft.DotNet.Watcher.Tools
 Microsoft.Azure.WebJobs
 Microsoft.Azure.WebJobs.Extensions
+
+Giraffe
+Microsoft.AspNetCore.StaticFiles
+Microsoft.Extensions.Logging.Debug
+Microsoft.AspNetCore.Hosting
+Microsoft.AspNetCore
+Microsoft.AspNetCore.WebSockets
+Microsoft.AspNetCore.WebSockets.Server
