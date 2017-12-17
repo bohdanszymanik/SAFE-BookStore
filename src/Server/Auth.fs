@@ -14,9 +14,8 @@ let login next (ctx: HttpContext) = task {
            (login.UserName <> "test2" || login.Password <> "test2") then
             return! failwithf "Could not authenticate %s" login.UserName
         let user : ServerTypes.UserRights = { UserName = login.UserName }
-        let token = JsonWebToken.encode user
-
-        return! Successful.OK token next ctx
+        let userData :Domain.UserData = { UserName = login.UserName; Token = JsonWebToken.encode user }
+        return! FableJson.serialize userData next ctx
     with
     | _ -> 
         return! UNAUTHORIZED "Bearer" "" (sprintf "User '%s' can't be logged in." login.UserName) next ctx
